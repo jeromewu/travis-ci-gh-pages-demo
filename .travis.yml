@@ -1,10 +1,17 @@
 language: node_js
-nodejs:
+node_js:
   - 8
+
+env:
+  global:
+    - ENCRYPTION_LABEL: ce1bb02cdcb4
+    - COMMIT_AUTHOR_EMAIL: jeromewus@gmail.com
 
 jobs:
   include:
     - stage: test
       script: npm test
-    - stage: build
-      script: npm run build
+    - stage: build & deploy
+      script:
+        - npm run build
+        - bash ./scripts/deploy.sh
