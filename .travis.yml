@@ -7,6 +7,8 @@ deploy:
   skip-cleanup: true
   targe-branch: gh-pages
   github-token: $GITHUB_TOKEN
+  on:
+    branch: develop
 
 jobs:
   include:
