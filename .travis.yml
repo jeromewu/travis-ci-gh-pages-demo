@@ -2,17 +2,15 @@ language: node_js
 node_js:
   - 8
 
+script:
+  - npm test
+  - npm run build
+
 deploy:
+  provider: pages
   local-dir: build
   skip-cleanup: true
   targe-branch: gh-pages
   github-token: $GITHUB_TOKEN
   on:
     branch: develop
-
-jobs:
-  include:
-    - stage: test
-      script: npm test
-    - stage: build
-      script: npm run build
