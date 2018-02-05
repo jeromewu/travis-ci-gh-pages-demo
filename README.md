@@ -1,7 +1,9 @@
 Travis CI GitHub Pages Demo
 =========================
-
 [![Build Status](https://travis-ci.org/jeromewu/travis-ci-gh-pages-demo.svg?branch=master)](https://travis-ci.org/jeromewu/travis-ci-gh-pages-demo)
+
+![](https://raw.githubusercontent.com/jeromewu/travis-ci-gh-pages-demo/master/assets/logo.png)
+
 
 Demo repo to compile &amp; deploy gh-pages with travis-ci
 
