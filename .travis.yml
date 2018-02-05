@@ -13,4 +13,8 @@ deploy:
   targe-branch: gh-pages
   github-token: $GITHUB_TOKEN
   on:
-    branch: develop
+    branch: master
+
+branches:
+  only:
+    - master

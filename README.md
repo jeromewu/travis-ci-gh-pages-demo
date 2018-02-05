@@ -8,3 +8,8 @@ Demo repo to compile &amp; deploy gh-pages with travis-ci
 What is included?
 
 - A react app created by create-react-app
+
+
+### Reference
+
+- [Travis CI: GitHub Pages Deployment](https://docs.travis-ci.com/user/deployment/pages)
