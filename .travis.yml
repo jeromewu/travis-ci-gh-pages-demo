@@ -6,6 +6,8 @@ env:
   global:
     - ENCRYPTION_LABEL: ce1bb02cdcb4
     - COMMIT_AUTHOR_EMAIL: jeromewus@gmail.com
+    - REPO: $(git config remote.origin.url)
+    - SSH_REPO: ${REPO/https:\/\/github.com\//git@github.com:}
 
 jobs:
   include:
@@ -14,4 +16,4 @@ jobs:
     - stage: build & deploy
       script:
         - bash ./scripts/add-ssh-key.sh
-        - npm run deploy
+        - npm run deploy -- -r $SSH_REPO
