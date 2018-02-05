@@ -12,7 +12,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -27,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/jeromewu/travis-ci-gh-pages-demo/issues"
   },
-  "homepage": "https://jeromewu.github.io/travis-ci-gh-pages-demo"
+  "homepage": "https://jeromewu.github.io/travis-ci-gh-pages-demo",
+  "devDependencies": {
+    "gh-pages": "^1.1.0"
+  }
 }
