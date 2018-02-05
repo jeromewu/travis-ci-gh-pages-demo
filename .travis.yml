@@ -2,18 +2,15 @@ language: node_js
 node_js:
   - 8
 
-env:
-  global:
-    - ENCRYPTION_LABEL: ce1bb02cdcb4
-    - COMMIT_AUTHOR_EMAIL: jeromewus@gmail.com
-    - REPO: $(git config remote.origin.url)
-    - SSH_REPO: ${REPO/https:\/\/github.com\//git@github.com:}
+deploy:
+  local-dir: build
+  skip-cleanup: true
+  targe-branch: gh-pages
+  github-token: $GITHUB_TOKEN
 
 jobs:
   include:
     - stage: test
       script: npm test
-    - stage: build & deploy
-      script:
-        - bash ./scripts/add-ssh-key.sh
-        - npm run deploy -- -r $SSH_REPO
+    - stage: build
+      script: npm run build
