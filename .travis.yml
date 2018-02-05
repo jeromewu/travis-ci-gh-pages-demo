@@ -4,8 +4,6 @@ nodejs:
 
 jobs:
   include:
-    - stage: install
-      script: npm install
     - stage: test
       script: npm test
     - stage: build
