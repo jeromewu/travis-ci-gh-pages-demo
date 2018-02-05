@@ -6,6 +6,7 @@ TARGET_BRANCH=gh-pages
 
 DIR=$(dirname $0)
 REPO=$(git config remote.origin.url)
+SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=$(git rev-parse --verify HEAD)
 
 setup_git_deploy_key() {
@@ -26,11 +27,8 @@ clone_gh_pages_branch() {
   cd ..
 }
 
-clean_old_content() {
+update_content() {
   rm -rf $TARGET_BRANCH/*
-}
-
-copy_new_content() {
   cp -rf build/* $TARGET_BRANCH/
 }
 
@@ -40,14 +38,13 @@ do_deploy() {
   git config user.email "$COMMIT_AUTHOR_EMAIL"
   git add -A .
   git commit -m "Deploy to Github Pages: $SHA"
-  git push origin $TARGET_BRANCH
+  git push $SSH_REPO $TARGET_BRANCH
 }
 
 main() {
   setup_git_deploy_key
   clone_gh_pages_branch
-  clean_old_content
-  copy_new_content
+  update_content
   do_deploy
 }
 
