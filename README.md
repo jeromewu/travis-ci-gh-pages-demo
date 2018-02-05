@@ -12,8 +12,8 @@ What is included?
 - A react app created by create-react-app
 - A reference .travis.yml
 
-
 ### Reference
 
 - [Travis CI: GitHub Pages Deployment](https://docs.travis-ci.com/user/deployment/pages)
+- [Travis CI: Deployment](https://docs.travis-ci.com/user/deployment)
 - [Create React App](https://github.com/facebook/create-react-app)
