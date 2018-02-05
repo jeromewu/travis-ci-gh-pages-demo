@@ -1,3 +1,12 @@
 language: node_js
 nodejs:
-  - stable
+  - lts/*
+
+jobs:
+  include:
+    - stage: install
+      script: npm install
+    - stage: test
+      script: npm test
+    - stage: build
+      script: npm run build
